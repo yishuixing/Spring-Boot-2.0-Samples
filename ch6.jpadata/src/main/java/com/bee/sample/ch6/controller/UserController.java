@@ -49,7 +49,7 @@ public class UserController {
 
     @RequestMapping("/pagequery.html")
     public String pageQuery(Integer deptId, int page, int size) {
-        PageRequest pr = new PageRequest(page, size);
+        PageRequest pr =  PageRequest.of(page, size);
 //		Page<User> users =  userService.queryUser(deptId, pr);
         Page<User> users = userService.queryUser2(deptId, pr);
         return String.valueOf(users.getTotalElements());
